@@ -5,7 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quorretora · CRM para corretoras de planos de saúde e odontológicos</title>
 <meta name="description" content="Toda proposta da sua corretora em uma fila única por status, no portal com a marca da sua corretora. Em piloto, com acesso antecipado.">
+<meta name="theme-color" content="#161616">
+<link rel="canonical" href="https://quorretora.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Quorretora">
+<meta property="og:title" content="Quorretora · CRM para corretoras de planos de saúde e odontológicos">
+<meta property="og:description" content="Toda proposta da sua corretora em uma fila única por status, no portal com a marca da sua corretora. Em piloto, com acesso antecipado.">
+<meta property="og:url" content="https://quorretora.com/">
+<meta property="og:image" content="https://quorretora.com/assets/logo-quorretora.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://quorretora.com/#org",
+      "name": "Quorretora",
+      "url": "https://quorretora.com/",
+      "logo": "https://quorretora.com/assets/logo-quorretora.png",
+      "parentOrganization": { "@type": "Organization", "name": "Qigger", "url": "https://qigger.com" },
+      "areaServed": "BR"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://quorretora.com/#app",
+      "name": "Quorretora",
+      "url": "https://quorretora.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "pt-BR",
+      "description": "CRM whitelabel para corretoras de planos de saúde e odontológicos: fila única de propostas por status, portal com a marca da corretora, notificações automáticas para corretores e dashboard com vendas, faturamento, vidas e ticket médio.",
+      "audience": { "@type": "BusinessAudience", "name": "Corretoras de planos de saúde e odontológicos" },
+      "publisher": { "@id": "https://quorretora.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quorretora.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Como migro minhas planilhas?", "acceptedAnswer": { "@type": "Answer", "text": "Nosso time apoia a carga inicial das suas propostas durante a implantação. Você não começa do zero." } },
+        { "@type": "Question", "name": "Funciona no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, web responsiva. Não precisa instalar app." } },
+        { "@type": "Question", "name": "Meu corretor atende outras corretoras. Como fica?", "acceptedAnswer": { "@type": "Answer", "text": "Cada corretora tem seu próprio portal, com endereço e marca exclusivos. O que acontece no seu portal é só da sua corretora." } },
+        { "@type": "Question", "name": "Quem vê o quê dentro do sistema?", "acceptedAnswer": { "@type": "Answer", "text": "Cada perfil tem seu escopo: corretor vê as próprias propostas, gestor vê o time, administrador vê tudo." } },
+        { "@type": "Question", "name": "E se o corretor não quiser usar?", "acceptedAnswer": { "@type": "Answer", "text": "Seu time cadastra e regulariza por ele. A autoria fica registrada." } },
+        { "@type": "Question", "name": "Como funciona o suporte?", "acceptedAnswer": { "@type": "Answer", "text": "Feito pelo time da Quorretora, de segunda a sexta, das 9h às 18h." } }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,12 +95,22 @@ button{font-family:inherit}
 .cap-tab.active .cap-track{background:#E5E5E5}
 .cap-fill{display:block;height:100%;background:#E0492F;width:0}
 
-@keyframes cellmorph{0%{border-radius:62% 0 30% 55%;transform:scale(.9)}22%{border-radius:34% 0 62% 38%}48%{border-radius:56% 0 38% 60%}74%{border-radius:40% 0 54% 42%}100%{border-radius:48% 0 48% 48%;transform:scale(1)}}
 @keyframes termline{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 @media(max-width:840px){#site-nav{display:none!important}}
+/* Telas muito estreitas: header compacto pra logo + CTA caberem lado a lado */
+@media(max-width:380px){header .logo-a img{height:36px!important;margin-left:-6px!important}header .btn-sm{font-size:12px!important;padding:8px 12px!important}}
 @media(max-width:640px){#kin-line{min-height:2.25em!important}}
-@media(max-width:760px){#hero-tree{display:none!important}#hero-mock{grid-template-columns:1fr!important}[data-mh]{display:none!important}[data-hrow]{grid-template-columns:1.5fr 1fr auto!important}}
+@media(max-width:940px){[data-mh]{display:none!important}[data-hrow]{grid-template-columns:1.5fr 1fr 146px!important}[data-hrow]>span:last-child{justify-self:stretch!important;box-sizing:border-box;max-width:100%;overflow:hidden;text-overflow:ellipsis;text-align:center}}
+@media(max-width:760px){#hero-tree{display:none!important}#hero-mock{grid-template-columns:1fr!important}}
+@media(max-width:480px){[data-hrow]{grid-template-columns:1.4fr 1fr 112px!important;gap:8px!important}}
+/* Jornada empilhada: componente gruda no topo (sob o header) e some o vão que deixava texto aparecer em cima */
+@media(max-width:800px){#j-grid{display:block!important}#j-sticky{top:58px!important;padding:6px 0 10px!important}#j-stage{height:min(300px,38vh)!important}#j-phone{width:132px!important}[data-jstep]{min-height:50vh!important}}
+/* Dashboard compacto: métricas em 2 colunas e gráfico só com os status principais */
+@media(max-width:700px){#dm-grid{grid-template-columns:repeat(2,1fr)!important}#dm-grid div[id^=dm-]{font-size:19px!important}}
+@media(max-width:430px){#dm-grid>div>span:first-child{display:none!important}}
+/* Celular: gráfico só com o essencial do funil e sem os números sobre as barras */
+@media(max-width:480px){.dash-extra-sm{display:none!important}.dash-val{display:none!important}#dash-chart{gap:6px!important}}
 @media(max-width:1080px){#persona-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:600px){#persona-grid{grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
@@ -60,7 +120,7 @@ button{font-family:inherit}
 
 <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(22,22,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <a href="#top" class="logo-a" style="display:flex;align-items:baseline;font-family:Manrope,sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em">qu<span style="display:inline-block;width:.56em;height:.56em;background:#E0492F;border-radius:48% 0 48% 48%;margin:0 .04em;transform:translateY(.01em);animation:cellmorph 1.6s cubic-bezier(.6,.05,.2,1) both"></span>rretora</a>
+    <a href="#top" class="logo-a" style="display:flex;align-items:center"><img src="assets/logo-quorretora-branca.png" alt="Quorretora" width="1512" height="480" style="height:44px;width:auto;display:block;margin-left:-8px"></a>
     <nav id="site-nav" style="display:flex;gap:28px;font-size:13.5px;font-weight:500">
       <a href="#produto" class="nav-a">Produto</a>
       <a href="#whitelabel" class="nav-a">Whitelabel</a>
@@ -218,11 +278,11 @@ button{font-family:inherit}
   <div style="max-width:1120px;margin:0 auto">
     <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,52px);letter-spacing:-0.025em;line-height:1.08;margin:0 0 18px">Acompanhe uma proposta,<br>do celular à implantação.</h2>
     <p style="font-size:17px;line-height:1.65;color:#525252;max-width:660px;margin:0 0 30px">Uma fila. Doze status canônicos. Regras claras em cada movimento. Role e veja o caminho inteiro.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start">
-      <div style="position:sticky;top:80px;z-index:5;background:#fff;padding:10px 0">
-        <div style="position:relative;height:min(440px,58vh)">
+    <div id="j-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start">
+      <div id="j-sticky" style="position:sticky;top:80px;z-index:5;background:#fff;padding:10px 0">
+        <div id="j-stage" aria-hidden="true" style="position:relative;height:min(440px,58vh)">
           <div id="j-video" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:1;pointer-events:none;transition:opacity .45s ease">
-            <div style="width:min(212px,44vw);background:#0D0D0D;border-radius:30px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.16)">
+            <div id="j-phone" style="width:min(212px,44vw);background:#0D0D0D;border-radius:30px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.16)">
               <video src="assets/gravacao_comprimida.mp4" autoplay muted playsinline id="cadastro-video" style="width:100%;display:block;border-radius:23px;background:#111"></video>
             </div>
           </div>
@@ -231,7 +291,7 @@ button{font-family:inherit}
               <div style="padding:12px 18px;border-bottom:1px solid #F0F0F0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.07em;color:#A3A3A3">FILA DE PROPOSTAS · BACKOFFICE</div>
               <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px">
                 <div><div style="font-weight:600;font-size:15px">Metalúrgica São José</div><div style="font-size:12px;color:#A3A3A3">PJ · 14 vidas · Operadora Alfa</div></div>
-                <span id="j-pill" style="font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;white-space:nowrap;flex:none;transition:background .45s ease,color .45s ease;background:#EEF2F6;color:#44618C">Aguardando validação</span>
+                <span id="j-pill" style="font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;text-align:center;transition:background .45s ease,color .45s ease;background:#EEF2F6;color:#44618C">Aguardando validação</span>
               </div>
               <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 16px">
                 <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;background:#F0F0F0;border-radius:5px;padding:4px 8px;color:#525252">contrato-social.pdf</span>
@@ -337,7 +397,7 @@ button{font-family:inherit}
           <span style="background:#fff;border:1px solid #E5E5E5;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:500;color:#525252;white-space:nowrap">Filtros avançados</span>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:14px">
+      <div id="dm-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:14px">
         <div style="background:#fff;border:1px solid #E5E5E5;border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:8px;background:#F0F0F0;color:#525252;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none;font-family:'JetBrains Mono',monospace">Σ</span><div style="min-width:0"><div style="font-size:10.5px;color:#A3A3A3;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Quantidade de vendas</div><div id="dm-vendas" style="font-family:Manrope,sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.02em">0</div></div></div>
         <div style="background:#fff;border:1px solid #E5E5E5;border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:8px;background:#F0F0F0;color:#525252;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none;font-family:'JetBrains Mono',monospace">$</span><div style="min-width:0"><div style="font-size:10.5px;color:#A3A3A3;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Faturamento</div><div id="dm-fat" style="font-family:Manrope,sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.02em">R$ 0</div></div></div>
         <div style="background:#fff;border:1px solid #E5E5E5;border-radius:12px;padding:14px 16px;display:flex;gap:10px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:8px;background:#F0F0F0;color:#525252;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none;font-family:'JetBrains Mono',monospace">♥</span><div style="min-width:0"><div style="font-size:10.5px;color:#A3A3A3;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Quantidade de vidas</div><div id="dm-vidas" style="font-family:Manrope,sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.02em">0</div></div></div>
@@ -358,7 +418,7 @@ button{font-family:inherit}
           <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:3px;background:#E0492F"></span>Vidas</span>
         </div>
         <div style="overflow-x:auto">
-          <div id="dash-chart" style="display:flex;gap:10px;align-items:flex-end;min-width:880px"></div>
+          <div id="dash-chart" style="display:flex;gap:10px;align-items:flex-end"></div>
         </div>
       </div>
     </div>
@@ -606,7 +666,7 @@ button{font-family:inherit}
 </section>
 <footer style="background:#111111;color:#A3A3A3;border-top:1px solid rgba(255,255,255,.08);max-width:1400px;margin:0 auto;padding:36px 24px">
   <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px">
-    <div style="display:flex;align-items:baseline;font-family:Manrope,sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.02em;color:#FAFAFA">qu<span style="display:inline-block;width:.56em;height:.56em;background:#E0492F;border-radius:48% 0 48% 48%;margin:0 .04em;transform:translateY(.01em)"></span>rretora</div>
+    <img src="assets/logo-quorretora-branca.png" alt="Quorretora" width="1512" height="480" style="height:36px;width:auto;display:block;margin-left:-7px">
     <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:13px">
       <span>Um produto <a href="https://qigger.com" target="_blank" rel="noopener" class="link-brand">Qigger</a></span>
       <a href="#" target="_blank" rel="noopener" class="wa-link link-muted">Contato</a>

@@ -1,0 +1,30 @@
+# Quorretora
+
+> CRM whitelabel para corretoras de planos de saúde e odontológicos no Brasil. Centraliza todas as propostas da corretora em uma fila única por status, num portal com a marca e o endereço da própria corretora (ex.: suacorretora.quorretora.com). O corretor cadastra a proposta pelo celular, o backoffice valida e move o status, e todos os interessados são notificados automaticamente a cada movimento. Produto da Qigger (https://qigger.com), em piloto com acesso antecipado.
+
+## O que o produto faz
+
+- Fila única de propostas com doze status canônicos (ex.: Aguardando validação, Aguardando emissão, Em análise, Aguardando assinatura do contrato, Implantado, Cancelado). Status é máquina de estados, não texto livre: movimentos críticos exigem informação obrigatória.
+- Portal whitelabel: logo, cores e subdomínio próprios de cada corretora, configurados pela equipe do Quorretora na implantação.
+- Notificações automáticas por e-mail e sino no sistema quando o status muda — o corretor não precisa ligar para perguntar "saiu minha venda?".
+- Dashboard com quantidade de vendas, faturamento, quantidade de vidas, ticket médio e vidas por venda; gráficos por status e por operadora; filtros por período, time, corretor e operadora.
+- Documentos organizados por pessoa (titular, dependentes, empresa) e tipo, com download em ZIP.
+- Times com recorte de visibilidade: corretor vê as próprias propostas, gestor vê o time, administrador vê tudo.
+- Ocorrências internas (só o time) e externas (visíveis ao corretor).
+- Três tipos de contrato nativos: Pessoa Física, Pessoa Jurídica e Adesão com Administradora, com titulares e dependentes.
+- Corretoras parceiras (assessorias/terceirizadas) modeladas nativamente: podem ter usuários, participar de times e enxergar a própria carteira.
+- Auditoria imutável de toda ação, banco de dados isolado por corretora e postura LGPD (CPF/CNPJ mascarados na interface).
+- Em construção: robôs que consultam os portais das operadoras automaticamente e movem o status sem digitação, com a engenharia de automação da Qigger.
+
+## Público
+
+- Donos e administradores de corretoras de planos de saúde e odontológicos.
+- Backoffice e gestores de vendas dessas corretoras.
+- Corretores e corretoras parceiras que originam propostas.
+
+## Contato
+
+- Site: https://quorretora.com/
+- Demonstração via WhatsApp: +55 11 98441-4559
+- Suporte: segunda a sexta, 9h às 18h (horário de Brasília).
+- Empresa: Qigger (https://qigger.com)

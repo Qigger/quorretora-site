@@ -149,13 +149,20 @@
 
   function setupJourney() {
     const steps = Array.from(document.querySelectorAll('[data-jstep]'));
+    const stackedLayout = window.matchMedia('(max-width: 800px)');
+    const stage = byId('j-stage');
     let currentStep = 0;
     let rafId = 0;
     const onScroll = () => {
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         rafId = 0;
-        const mid = window.innerHeight * 0.5;
+        // No layout empilhado o componente fica fixo no topo; o passo ativo é o mais próximo do centro da área visível abaixo dele.
+        let mid = window.innerHeight * 0.5;
+        if (stackedLayout.matches && stage) {
+          const stageBottom = Math.max(0, stage.getBoundingClientRect().bottom);
+          mid = (stageBottom + window.innerHeight) / 2;
+        }
         let best = 0;
         let bestDistance = Infinity;
         steps.forEach((el) => {
@@ -179,13 +186,6 @@
     // Loop antes do fim (mesma regra do design) e retomada se o autoplay for bloqueado.
     video.addEventListener('timeupdate', () => {
       if (video.duration && video.currentTime >= video.duration - 2) {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }
-    });
-    // Arquivo truncado/buffer esgotado: volta ao início em vez de congelar.
-    video.addEventListener('waiting', () => {
-      if (video.currentTime > 0.5) {
         video.currentTime = 0;
         video.play().catch(() => {});
       }
@@ -247,6 +247,12 @@
     ['Aguardando assinatura do contrato', 4, 5600, 60], ['Aguardando pagamento', 3, 3400, 39], ['Pendente', 2, 1500, 9],
     ['Cancelado', 4, 3900, 41], ['Implantado', 85, 42000, 505]
   ];
+  // O gráfico mostra só estes status (recorte legível do funil); os demais de DASH_GROUPS ficam de fora.
+  const DASH_CHART_LABELS = new Set([
+    'Aguardando validação', 'Aguardando emissão', 'Em análise', 'Aguardando assinatura do contrato', 'Cancelado', 'Implantado'
+  ]);
+  // Em celulares (≤480px) reduz ainda mais: só o essencial do funil.
+  const DASH_MINI_LABELS = new Set(['Aguardando validação', 'Em análise', 'Cancelado', 'Implantado']);
 
   function formatMetric(value, prefix) {
     if (prefix === '#') return value.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
@@ -277,10 +283,11 @@
     const chart = byId('dash-chart');
     const maxes = [85, 42000, 505];
     const colors = ['#161616', '#D9D9D9', '#E0492F'];
-    DASH_GROUPS.forEach(([label, sales, revenue, lives], groupIndex) => {
+    DASH_GROUPS.filter(([label]) => DASH_CHART_LABELS.has(label)).forEach(([label, sales, revenue, lives], groupIndex) => {
       const values = [sales, revenue, lives];
       const labels = [String(sales), revenue >= 1000 ? 'R$ ' + Math.round(revenue / 1000) + 'k' : 'R$ ' + revenue, String(lives)];
       const group = document.createElement('div');
+      if (!DASH_MINI_LABELS.has(label)) group.className = 'dash-extra-sm';
       group.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0';
       const bars = document.createElement('div');
       bars.style.cssText = 'display:flex;align-items:flex-end;gap:3px;height:132px';
@@ -288,12 +295,13 @@
         const column = document.createElement('div');
         column.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px';
         const valueLabel = document.createElement('span');
-        valueLabel.style.cssText = 'font-size:8.5px;color:#A3A3A3;white-space:nowrap';
+        valueLabel.className = 'dash-val';
+        valueLabel.style.cssText = 'font-size:9.5px;color:#A3A3A3;white-space:nowrap';
         valueLabel.textContent = labels[barIndex];
         const bar = document.createElement('div');
         const height = Math.max(3, Math.round((value / maxes[barIndex]) * 108));
         bar.className = 'dash-bar';
-        bar.style.cssText = `width:10px;height:${height}px;background:${colors[barIndex]};border-radius:3px 3px 1px 1px;transform:scaleY(0.02);transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.7,.2,1) ${groupIndex * 40}ms`;
+        bar.style.cssText = `width:14px;height:${height}px;background:${colors[barIndex]};border-radius:3px 3px 1px 1px;transform:scaleY(0.02);transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.7,.2,1) ${groupIndex * 40}ms`;
         column.append(valueLabel, bar);
         bars.appendChild(column);
       });
