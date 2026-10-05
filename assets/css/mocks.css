@@ -1,0 +1,80 @@
+/* Telas do sistema reproduzidas no site (fila, documentos, avisos, e-mail, dashboard, pós-venda).
+   Referência: prints do produto. Os estados animados (.is-on, .is-hi, .is-seen) são ligados pelo JS. */
+
+/* ===== Árvore de status (fila de vendas e de pós-venda): contadores numa coluna só ===== */
+.q-tree{border-right:1px solid #E5E5E5;background:#fff;padding:10px 8px 16px}
+.q-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:6px 6px 6px 8px;line-height:16px}
+.q-row--all{align-items:center;background:#F2F2F2;border-radius:8px;padding:8px 6px 8px 10px;margin-bottom:6px;font-size:12.5px;font-weight:600}
+.q-row--group{margin-top:2px;font-size:12px;font-weight:600;color:#0D0D0D}
+.q-row--sub{padding:4px 6px 4px 24px;font-size:11.5px;color:#404040}
+.q-label{display:flex;align-items:flex-start;gap:7px;min-width:0}
+.q-chevron{flex:none;width:10px;height:10px;margin-top:3px;color:#A3A3A3}
+.q-dot{flex:none;width:7px;height:7px;border-radius:50%;margin:4.5px 1.5px 0}
+.q-count{flex:none;width:28px;text-align:center;font-size:10.5px;font-weight:500;line-height:16px;color:#8A8A8A}
+.q-count--pill{background:#F0F0F0;border-radius:999px;font-weight:600;color:#525252}
+.q-count--dark{background:#161616;border-radius:999px;font-weight:600;line-height:18px;color:#fff}
+
+/* ===== Fila animada ===== */
+.fila-toast{position:absolute;top:52px;right:14px;z-index:3;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E5E5E5;border-radius:10px;padding:10px 14px;box-shadow:0 12px 30px rgba(0,0,0,.12);opacity:0;transform:translateY(-8px);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
+.fila-toast.is-on{opacity:1;transform:translateY(0)}
+.status-pill{justify-self:center;font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;transition:background .45s ease,color .45s ease}
+.impl-label,.impl-count{transition:color .4s ease}
+.impl-label.is-hi,.impl-count.is-hi{color:#30A46C}
+
+/* ===== Documentos da proposta ===== */
+.doc-screen{flex:1;min-width:0;background:#fff;border:1px solid #E5E5E5;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.08);padding:18px;display:flex;flex-direction:column;gap:16px;text-align:left;margin-right:-40px}
+.doc-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.doc-title{display:flex;align-items:baseline;gap:6px;font-size:15px;font-weight:600;color:#0D0D0D}
+.doc-total{font-size:12px;font-weight:400;color:#8A8A8A}
+.doc-actions{display:flex;flex-wrap:wrap;gap:6px}
+.doc-btn{display:flex;align-items:center;gap:6px;border:1px solid #E5E5E5;border-radius:999px;padding:6px 11px;font-size:11.5px;font-weight:600;color:#404040;background:#fff;white-space:nowrap}
+.doc-group{display:flex;flex-direction:column;gap:8px}
+.doc-group-title{font-size:11.5px;font-weight:500;color:#525252}
+.doc-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.doc-file{display:flex;align-items:center;gap:10px;border:1px solid #E5E5E5;border-radius:10px;padding:9px 10px;min-width:0;background:#fff}
+.doc-type{flex:none;width:34px;height:34px;border-radius:8px;background:#EBEDF0;color:#0D0D0D;font-size:10px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
+.doc-type--pdf{background:#FCE4EC;color:#D6336C}
+.doc-info{min-width:0}
+.doc-name{font-size:12.5px;font-weight:600;color:#0D0D0D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc-meta{font-size:11px;color:#8A8A8A;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== Avisos: sino do sistema + e-mail de notificação ===== */
+.notif-stage{background:#FAFAFA;border:1px solid #E5E5E5;border-radius:18px;padding:32px clamp(16px,4vw,40px);display:flex;flex-direction:column}
+.notif-panel{width:min(100%,380px);padding-bottom:24px;background:#fff;border:1px solid #E5E5E5;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.09);overflow:hidden}
+.notif-topbar{display:flex;align-items:center;justify-content:flex-end;gap:16px;height:52px;padding:0 16px;border-bottom:1px solid #F0F0F0;color:#404040}
+.notif-bell{position:relative;display:flex}
+.notif-badge{position:absolute;top:-6px;right:-8px;min-width:16px;height:16px;border-radius:999px;background:#161616;color:#fff;font-size:9.5px;font-weight:600;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+.notif-user{display:flex;align-items:center;gap:8px}
+.notif-avatar{width:28px;height:28px;border-radius:50%;background:#161616;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.notif-user-text{display:flex;flex-direction:column;line-height:1.25}
+.notif-user-name{font-size:12px;font-weight:600;color:#0D0D0D}
+.notif-user-org{font-size:10.5px;color:#8A8A8A}
+.notif-dropdown-title{padding:14px 18px;border-bottom:1px solid #F0F0F0;font-size:14px;font-weight:500;color:#0D0D0D}
+.notif-item{padding:11px 18px;background:#fff;transition:opacity .4s ease,transform .4s ease}
+.notif-item-head{display:flex;align-items:baseline;gap:8px}
+.notif-item-title{font-size:12.5px;font-weight:600;color:#0D0D0D}
+.notif-item-date{font-size:10.5px;color:#A3A3A3}
+.notif-item-text{font-size:12px;line-height:1.45;color:#525252;margin-top:2px}
+.js .notif-item:not(.is-on){opacity:0;transform:translateY(-8px)}
+.notif-mail{align-self:flex-end;width:min(100%,360px);margin-top:-20px;position:relative;z-index:1;background:#fff;border:1px solid #E5E5E5;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.12);overflow:hidden;transition:opacity .5s ease,transform .5s ease}
+.js .notif-mail:not(.is-on){opacity:0;transform:translateY(12px)}
+.mail-logo{display:flex;align-items:baseline;padding:16px 22px;border-bottom:1px solid #EDEDED;font-family:Manrope,sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.02em;color:#0D0D0D}
+.mail-cell{display:inline-block;width:.56em;height:.56em;background:#E0492F;border-radius:48% 0 48% 48%;margin:0 .04em;transform:translateY(.01em)}
+.mail-body{padding:18px 22px 20px}
+.mail-title{font-size:15px;font-weight:700;color:#0D0D0D;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid #EDEDED}
+.mail-text{font-size:12.5px;line-height:1.5;color:#0D0D0D;margin:0 0 8px}
+.mail-from{font-size:11px;color:#525252;margin:0 0 14px}
+.mail-btn{display:block;text-align:center;background:#161616;color:#fff;border-radius:999px;padding:10px 16px;font-size:12.5px;font-weight:600}
+.mail-footer{padding:10px 22px;background:#FAFAFA;border-top:1px solid #EDEDED;text-align:center;font-size:10.5px;color:#525252}
+
+/* ===== Dashboard ===== */
+.dash-bar{display:block;width:14px;border-radius:3px 3px 0 0;transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.dash-val{display:block;font-size:9.5px;font-weight:700;color:#404040;white-space:nowrap;transition:opacity .4s ease}
+.js [data-seen]:not(.is-seen) .dash-bar{transform:scaleY(0)}
+.js [data-seen]:not(.is-seen) .dash-val{opacity:0}
+
+/* ===== Pós-venda ===== */
+.pv-pill{justify-self:center;font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;background:#E4EDFB;color:#2F6BD6;transition:background .4s ease,color .4s ease}
+.pv-pill.is-swapped{background:#E3E4F9;color:#544EC9}
+
+@media(max-width:640px){.notif-panel,.notif-mail{width:100%}.notif-mail{margin-top:16px}}
