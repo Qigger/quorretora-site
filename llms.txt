@@ -87,6 +87,6 @@ Sim, é só entrar em contato com o nosso suporte dentro do sistema. Ao mudar pa
 
 ## Optional
 
-- [Termos de Uso](https://quorretora.com/termos-de-uso.html): documento em elaboração.
-- [Política de Privacidade](https://quorretora.com/politica-de-privacidade.html): documento em elaboração.
+- [Termos de Uso](https://quorretora.com/termos-de-uso.html): teste grátis, planos e usuários, pagamento, troca de plano e cancelamento, pausa e exclusão dos dados, dados agregados e anonimizados e o anexo de tratamento de dados em nome da corretora.
+- [Política de Privacidade](https://quorretora.com/politica-de-privacidade.html): dados coletados, finalidades e bases legais, fornecedores, prazos de guarda, direitos do titular e encarregado de dados.
 - [Qigger](https://qigger.com): empresa responsável pelo Quorretora.

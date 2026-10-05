@@ -13,6 +13,7 @@ export function setupTrialModal({ config }) {
   const dialog = byId('trial-modal');
   if (!overlay || !dialog) return;
   const flow = createTrialFlow({ config });
+  linkAcceptedVersions(dialog, config);
   let opener = null;
 
   const open = (plan) => {
@@ -44,6 +45,12 @@ export function setupTrialModal({ config }) {
 
   const deepLinkPlan = readDeepLink();
   if (deepLinkPlan !== undefined) setTimeout(() => open(deepLinkPlan), DEEP_LINK_DELAY_MS);
+}
+
+// Os links do aceite abrem a mesma versão dos documentos que vai para a API (termsVersion e privacyVersion).
+function linkAcceptedVersions(dialog, config) {
+  dialog.querySelector('[data-legal-doc="terms"]')?.setAttribute('href', `termos-de-uso-${config.termsVersion}.html`);
+  dialog.querySelector('[data-legal-doc="privacy"]')?.setAttribute('href', `politica-de-privacidade-${config.privacyVersion}.html`);
 }
 
 function trapFocus(event, dialog) {
