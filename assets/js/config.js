@@ -5,8 +5,9 @@ export const SITE_CONFIG = Object.freeze({
   explainerVideoSrc: 'assets/quorretora-explicativo-1080-web.mp4',
 
   // Endpoint que recebe o cadastro do teste grátis (POST JSON, responde 202).
-  // Vazio: o formulário não finge sucesso; mostra o erro com o atalho para o WhatsApp.
-  trialApiUrl: '',
+  // A API só aceita o site quando a origem dele estiver liberada na CORS dela. Até lá, o envio
+  // falha e o formulário mostra o atalho para o WhatsApp.
+  trialApiUrl: 'https://api.quorretora.com/public/trial-signups',
   trialApiTimeoutMs: 15000,
 
   // Versões dos documentos que o visitante aceita no cadastro.

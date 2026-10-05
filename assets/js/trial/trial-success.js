@@ -1,4 +1,4 @@
-// Tela "Confirme seu e-mail." com o vídeo de funcionamento do sistema.
+// Tela "Recebemos seu cadastro." com o vídeo de funcionamento do sistema.
 import { byId } from '../dom.js';
 
 export function createTrialSuccess({ videoSrc, posterSeconds }) {

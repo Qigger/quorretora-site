@@ -11,7 +11,9 @@ const STEP_ONE_ERRORS = ['nome', 'email', 'wa', 'cpf', 'corretora', 'cnpj', 'slu
 const ERROR_ORDER = [...STEP_ONE_ERRORS, 'plano', 'aceite'];
 // Falhas que não dependem do que a pessoa digitou: a saída é o WhatsApp.
 const WHATSAPP_FALLBACK_ERRORS = ['generic', 'rate'];
-const SUBMIT_LABELS = { idle: 'Começar meu teste grátis', sending: 'Liberando seu acesso…', err: 'Tentar de novo' };
+const SUBMIT_LABELS = { idle: 'Começar meu teste grátis', sending: 'Enviando seu cadastro…', err: 'Tentar de novo' };
+// A API devolve 400 em utm* acima disso, e esse erro não tem campo no formulário.
+const UTM_MAX_LENGTH = 200;
 
 export function createTrialFlow({ config }) {
   const form = byId('trial-form');
@@ -143,7 +145,7 @@ export function createTrialFlow({ config }) {
 
 function readUtm() {
   const params = new URLSearchParams(window.location.search);
-  const read = (key) => params.get(key) || null;
+  const read = (key) => params.get(key)?.slice(0, UTM_MAX_LENGTH) || null;
   return {
     utmSource: read('utm_source'), utmMedium: read('utm_medium'), utmCampaign: read('utm_campaign'),
     utmTerm: read('utm_term'), utmContent: read('utm_content'),
