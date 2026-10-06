@@ -1,30 +1,92 @@
 # Quorretora
 
-> CRM whitelabel para corretoras de planos de saúde e odontológicos no Brasil. Centraliza todas as propostas da corretora em uma fila única por status, num portal com a marca e o endereço da própria corretora (ex.: suacorretora.quorretora.com). O corretor cadastra a proposta pelo celular, o backoffice valida e move o status, e todos os interessados são notificados automaticamente a cada movimento. Produto da Qigger (https://qigger.com), em piloto com acesso antecipado.
+> Sistema (CRM) para corretoras de planos de saúde e odontológicos no Brasil, da corretora de uma pessoa à assessoria com corretoras parceiras. Organiza as propostas com cada documento categorizado por pessoa, acompanha o status em todas as Operadoras em uma fila só, avisa quem vendeu a cada mudança e cuida do pós-venda. Funciona no navegador, com a marca e o endereço da própria corretora (ex.: suacorretora.quorretora.com). Teste grátis por 15 dias, sem cartão. Produto da Qigger.
 
-## O que o produto faz
+Fatos principais:
 
-- Fila única de propostas com doze status canônicos (ex.: Aguardando validação, Aguardando emissão, Em análise, Aguardando assinatura do contrato, Implantado, Cancelado). Status é máquina de estados, não texto livre: movimentos críticos exigem informação obrigatória.
-- Portal whitelabel: logo, cores e subdomínio próprios de cada corretora, configurados pela equipe do Quorretora na implantação.
-- Notificações automáticas por e-mail e sino no sistema quando o status muda — o corretor não precisa ligar para perguntar "saiu minha venda?".
-- Dashboard com quantidade de vendas, faturamento, quantidade de vidas, ticket médio e vidas por venda; gráficos por status e por operadora; filtros por período, time, corretor e operadora.
-- Documentos organizados por pessoa (titular, dependentes, empresa) e tipo, com download em ZIP.
-- Times com recorte de visibilidade: corretor vê as próprias propostas, gestor vê o time, administrador vê tudo.
-- Ocorrências internas (só o time) e externas (visíveis ao corretor).
-- Três tipos de contrato nativos: Pessoa Física, Pessoa Jurídica e Adesão com Administradora, com titulares e dependentes.
-- Corretoras parceiras (assessorias/terceirizadas) modeladas nativamente: podem ter usuários, participar de times e enxergar a própria carteira.
-- Auditoria imutável de toda ação, banco de dados isolado por corretora e postura LGPD (CPF/CNPJ mascarados na interface).
-- Em construção: robôs que consultam os portais das operadoras automaticamente e movem o status sem digitação, com a engenharia de automação da Qigger.
+- Para quem é: corretores e corretoras de planos de saúde e odontológicos, corretoras com equipe e assessorias com corretoras parceiras.
+- Planos: Gestão por R$ 149,90/mês (até 10 usuários) e Automação por R$ 249,90/mês (até 20 usuários). Usuário adicional: R$ 9,90/mês em qualquer plano.
+- Teste grátis: 15 dias em qualquer plano, sem cartão de crédito. O acesso chega por e-mail depois que o time do Quorretora prepara o sistema da corretora.
+- Cancelamento: sem multa; o acesso continua até o fim do período já pago.
+- Suporte: time do Quorretora, de segunda a sexta, das 9h às 18h (horário de Brasília).
+- Contato: WhatsApp +55 11 98441-4559 (https://wa.me/5511984414559) e Instagram @quorretora.
+- Empresa: Quorretora é um produto da Qigger (https://qigger.com).
 
-## Público
+## O que o sistema faz
 
-- Donos e administradores de corretoras de planos de saúde e odontológicos.
-- Backoffice e gestores de vendas dessas corretoras.
-- Corretores e corretoras parceiras que originam propostas.
+- **Vendas:** fila única de propostas por status, do cadastro à implantação, com filtro em árvore (Curadoria, Emissão, Operadora, Cancelado, Implantado), busca e filtros avançados.
+- **Documentos:** quem vende anexa cada arquivo dizendo de quem é (titular, dependente ou empresa) e o que é (RG, comprovante de endereço, carta de permanência). O cadastro só fecha com tudo categorizado. Download de tudo em ZIP.
+- **Avisos automáticos:** e-mail e sino no sistema a cada mudança de status ou ocorrência; quem vendeu fica sabendo sem precisar perguntar.
+- **Dashboard:** quantidade de vendas, faturamento, quantidade de vidas, ticket médio e vidas por venda; resultado por status e por operadora; ranking de corretores e de gestores.
+- **Pós-venda:** solicitações de inclusão e exclusão de beneficiário, alteração de dados cadastrais, de vencimento e de produto, e cancelamento de contrato sobre vendas implantadas, com os documentos exigidos em cada tipo, fila própria e protocolo da Operadora.
+- **Times e usuários:** cada pessoa vê o que é do seu escopo; o gestor acompanha o próprio time.
+- **Corretoras parceiras (assessorias):** cada parceira cadastra as próprias vendas e vê só a carteira dela; a assessoria vê tudo centralizado.
+- **Sua marca:** o sistema com o logo, as cores e o endereço da corretora, configurados pela equipe do Quorretora.
+- **Consulta automática:** status consultado nos portais das Operadoras sem ninguém digitar, ativado Operadora a Operadora.
+- **Segurança:** auditoria imutável de toda ação, banco de dados isolado por corretora e postura LGPD (CPF e CNPJ mascarados na interface).
 
-## Contato
+## Planos
 
-- Site: https://quorretora.com/
-- Demonstração via WhatsApp: +55 11 98441-4559
-- Suporte: segunda a sexta, 9h às 18h (horário de Brasília).
-- Empresa: Qigger (https://qigger.com)
+- **Gestão, R$ 149,90/mês:** até 10 usuários incluídos. Vendas, pós-venda, documentos, avisos por e-mail e sino, dashboard com ranking, times e usuários, suporte de segunda a sexta das 9h às 18h e endereço próprio (suacorretora.quorretora.com).
+- **Automação, R$ 249,90/mês:** até 20 usuários incluídos. Tudo do Gestão, mais logo e cores da corretora no sistema, consulta automática de status nas Operadoras e corretoras parceiras.
+- **Usuário adicional:** R$ 9,90/mês. Conta todo usuário que teve acesso no mês, inclusive corretores e usuários de parceiras.
+
+## Perguntas frequentes
+
+### Preciso de cartão de crédito para testar?
+
+Não. Você cadastra a corretora, recebe o acesso por e-mail e usa por 15 dias. Se quiser continuar, é só clicar em Contratar dentro do sistema e falar com o nosso time.
+
+### O que acontece quando os 15 dias acabam?
+
+O acesso é pausado e seus dados ficam guardados por 30 dias. Se contratar nesse período, você continua de onde parou.
+
+### Cobra por usuário?
+
+Cada plano inclui uma quantidade de usuários (10 no Gestão, 20 no Automação). Acima disso, cada usuário adicional custa R$ 9,90 por mês. Conta todo usuário que teve acesso no mês, inclusive corretores e usuários de parceiras.
+
+### Como migro minhas planilhas?
+
+Você pode cadastrar as propostas direto no sistema ou pedir ajuda: nosso time faz o cadastro dos usuários e a migração da sua planilha, sem custo. É só chamar no WhatsApp que a gente começa.
+
+### E se alguém da equipe não quiser usar?
+
+Você cadastra e regulariza por ela. A autoria fica registrada e ela continua sendo avisada a cada status.
+
+### Sou assessoria. Minhas corretoras parceiras podem usar?
+
+Sim, no plano Automação. Cada parceira ganha acesso para cadastrar e acompanhar as próprias propostas. Ela enxerga só a carteira dela, e você enxerga tudo em uma fila só, sem receber venda por WhatsApp.
+
+### O sistema com a marca da minha corretora vem no teste?
+
+O endereço próprio (suacorretora.quorretora.com) já vem no teste. Logo e cores da sua corretora fazem parte do Automação: na contratação, nossa equipe configura assim que você enviar.
+
+### A consulta automática funciona com a minha Operadora?
+
+A consulta automática de status é ativada Operadora a Operadora, priorizada pela carteira dos clientes ativos. Na contratação, a gente confirma a cobertura da sua carteira.
+
+### Como funciona o suporte?
+
+Feito pelo time do Quorretora, de segunda a sexta, das 9h às 18h. Dentro do sistema, o administrador tem um botão de suporte que abre direto a conversa com o nosso time.
+
+### Posso mudar de plano depois?
+
+Sim, é só entrar em contato com o nosso suporte dentro do sistema. Ao mudar para o Automação, as funcionalidades novas são liberadas assim que a troca é feita, sem cobrança extra no mês. O novo valor começa na próxima fatura. Ao voltar para o Gestão, você continua com o Automação até o fim do período já pago.
+
+### Como cancelo?
+
+É só falar com o nosso suporte. Seu acesso continua até o fim do período já pago, sem multa.
+
+## Páginas
+
+- [Página inicial](https://quorretora.com/): o que o sistema faz, planos, segurança e perguntas frequentes.
+- [Planos e preços](https://quorretora.com/#precos): Gestão e Automação.
+- [Perguntas frequentes](https://quorretora.com/#faq): teste grátis, cobrança, migração, assessorias e suporte.
+- [Começar o teste grátis](https://quorretora.com/?teste=1): cadastro de 15 dias, sem cartão.
+- [Vídeo do sistema funcionando](https://quorretora.com/assets/quorretora-explicativo-1080-web.mp4): demonstração de 2 minutos.
+
+## Optional
+
+- [Termos de Uso](https://quorretora.com/termos-de-uso.html): teste grátis, planos e usuários, pagamento, troca de plano e cancelamento, pausa e exclusão dos dados, dados agregados e anonimizados e o anexo de tratamento de dados em nome da corretora.
+- [Política de Privacidade](https://quorretora.com/politica-de-privacidade.html): dados coletados, finalidades e bases legais, fornecedores, prazos de guarda, direitos do titular e encarregado de dados.
+- [Qigger](https://qigger.com): empresa responsável pelo Quorretora.
